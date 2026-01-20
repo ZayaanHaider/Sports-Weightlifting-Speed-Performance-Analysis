@@ -54,8 +54,8 @@ All analysis was conducted using **base R**.
 ### 1) Speed distribution (40-yard dash)
 40-yard dash times are slightly **right-skewed**, centered around ~4.7–4.8 seconds.
 
-![Histogram of 40yd](visuals/histogram.png)
-![Boxplot of 40yd](visuals/boxplot_40yd.png)
+![Histogram of 40yd](visuals/Histogram.png)
+![Boxplot of 40yd](visuals/Boxplot40yd.png)
 
 ---
 
@@ -71,7 +71,7 @@ Bench press repetitions show a **positive association** with 40-yard dash time
 Athletes in lower bench press tiers exhibit **higher average broad jump distances**,
 suggesting greater lower-body explosiveness.
 
-![Broad jump by bench](visuals/broadjump_by_bench.png)
+![Broad jump by bench](visuals/Bench_vs_Broadjump_plot.png)
 
 ---
 
