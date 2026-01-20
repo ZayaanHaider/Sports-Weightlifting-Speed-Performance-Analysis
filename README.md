@@ -54,7 +54,7 @@ All analysis was conducted using **base R**.
 ### 1) Speed distribution (40-yard dash)
 40-yard dash times are slightly **right-skewed**, centered around ~4.7–4.8 seconds.
 
-![Histogram of 40yd](visuals/histogram_40yd.png)
+![Histogram of 40yd](visuals/histogram.png)
 ![Boxplot of 40yd](visuals/boxplot_40yd.png)
 
 ---
