@@ -1,17 +1,8 @@
 # ==================================================
 # Sports Weightlifting & Speed Performance Analysis
-# (Internship-ready, reproducible)
 # ==================================================
 
-# -------------------------
-# Setup
-# -------------------------
-# Folder assumptions (relative to repo root):
-# - data/Sports_WeightliftingSpeed.csv
-# - visuals/
-# - results/
 
-# Create output folders if they don't exist
 if (!dir.exists("visuals")) dir.create("visuals", recursive = TRUE)
 if (!dir.exists("results")) dir.create("results", recursive = TRUE)
 
@@ -23,9 +14,7 @@ sink("results/statistical_tests.txt")
 cat("Sports Weightlifting & Speed Performance Analysis\n")
 cat("Generated on:", as.character(Sys.time()), "\n\n")
 
-# --------------------------------------------------
 # 1) Distribution of Player Positions
-# --------------------------------------------------
 cat("1) Position distribution\n")
 position_counts <- table(Draft$Pos)
 position_props <- prop.table(position_counts)
@@ -34,9 +23,7 @@ cat("\nProportions:\n")
 print(round(position_props, 4))
 cat("\n\n")
 
-# --------------------------------------------------
 # 2) Distribution of 40-Yard Dash Times
-# --------------------------------------------------
 cat("2) 40-yard dash summary\n")
 forty <- na.omit(Draft$X40yd)
 
@@ -69,9 +56,8 @@ boxplot(forty,
         col = "orange")
 dev.off()
 
-# --------------------------------------------------
 # 3) Bench Press Level vs 40-Yard Dash Level
-# --------------------------------------------------
+
 cat("3) Cross-tab: BenchRep_Levels vs 40yd_Levels\n")
 level_table <- table(Draft$BenchRep_Levels, Draft$`40yd_Levels`)
 print(level_table)
@@ -79,10 +65,8 @@ cat("\nProportions (overall):\n")
 print(round(prop.table(level_table), 4))
 cat("\n\n")
 
-# --------------------------------------------------
 # 4) Bench Press Reps vs 40-Yard Dash (Quantitative)
 #    + Upgrade: correlation + simple linear regression
-# --------------------------------------------------
 cat("4) Bench reps vs 40yd (quantitative)\n")
 sub_40_bench <- na.omit(data.frame(Bench = Draft$Bench, X40yd = Draft$X40yd))
 
@@ -109,10 +93,8 @@ model <- lm(X40yd ~ Bench, data = sub_40_bench)
 print(summary(model))
 cat("\n\n")
 
-# --------------------------------------------------
 # 5) Broad Jump by Bench Press Level
 #    + Upgrade: one-way ANOVA
-# --------------------------------------------------
 cat("5) Broad jump by bench level\n")
 sub_bj <- na.omit(data.frame(
   BroadJump = Draft$`Broad Jump`,
